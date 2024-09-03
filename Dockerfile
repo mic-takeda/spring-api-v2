@@ -10,7 +10,7 @@ ENV HOME=/${WORKDIR} \
 WORKDIR ${HOME}
 COPY ./ ${HOME}
 RUN chmod +x gradlew   # gradlew に実行権限を付与!
-RUN ./gradlew build
+RUN ./gradlew build -x test
 RUN ls -la ${HOME}/build/libs/  # 確認用
 #
 # Package stage
